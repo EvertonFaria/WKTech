@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+  <Transactions>
+    <Transaction>2024/11/02 21:53:09.602,=E:\projetos\Unit1.pas</Transaction>
+    <Transaction>2024/11/02 21:56:23.250,E:\projetos\WK Technology\Units\Menu\UMenu.dfm=E:\projetos\Unit1.dfm</Transaction>
+    <Transaction>2024/11/02 21:56:23.250,E:\projetos\WK Technology\Units\Menu\UMenu.pas=E:\projetos\Unit1.pas</Transaction>
+    <Transaction>2024/11/02 21:56:51.180,E:\projetos\WK Technology\TesteDelphiWKT.dproj=E:\projetos\Project1.dproj</Transaction>
+    <Transaction>2024/11/02 22:51:44.384,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/02 22:52:30.003,E:\projetos\WK Technology\Units\Pedidos\UPedidos.dfm=E:\projetos\WK Technology\Unit1.dfm</Transaction>
+    <Transaction>2024/11/02 22:52:30.003,E:\projetos\WK Technology\Units\Pedidos\UPedidos.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 00:41:02.788,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 00:42:01.435,E:\projetos\WK Technology\Units\Busca\UBusca.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 00:42:01.435,E:\projetos\WK Technology\Units\Busca\UBusca.dfm=E:\projetos\WK Technology\Unit1.dfm</Transaction>
+    <Transaction>2024/11/03 01:00:41.059,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 01:02:17.133,E:\projetos\WK Technology\DM\Imagens\UImagensEIcones.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 01:02:17.133,E:\projetos\WK Technology\DM\Imagens\UImagensEIcones.dfm=E:\projetos\WK Technology\Unit1.dfm</Transaction>
+    <Transaction>2024/11/03 03:31:25.703,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 03:31:45.659,E:\projetos\WK Technology\Entidades\Pedido.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 03:32:06.044,E:\projetos\WK Technology\Entidades\EPedido.pas=E:\projetos\WK Technology\Entidades\Pedido.pas</Transaction>
+    <Transaction>2024/11/03 16:39:24.551,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 16:39:38.667,E:\projetos\WK Technology\Entidades\EClientes.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 16:39:57.165,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 16:40:18.572,E:\projetos\WK Technology\Entidades\EProdutos.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 16:53:37.188,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/03 16:54:08.383,E:\projetos\WK Technology\Entidades\EObjPadrao.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/04 16:21:26.965,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/04 16:21:45.450,E:\projetos\WK Technology\Entidades\EItemPedido.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/04 18:19:32.138,E:\projetos\WK Technology\Entidades\EObjPadrao.pas=</Transaction>
+    <Transaction>2024/11/04 20:28:56.701,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/04 20:29:55.994,E:\projetos\WK Technology\Entidades\ETipos.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/05 03:08:00.187,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/05 03:08:35.700,E:\projetos\WK Technology\Units\Pedidos\UItemPedido.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/05 03:08:35.700,E:\projetos\WK Technology\Units\Pedidos\UItemPedido.dfm=E:\projetos\WK Technology\Unit1.dfm</Transaction>
+  </Transactions>
+</BorlandProject>
