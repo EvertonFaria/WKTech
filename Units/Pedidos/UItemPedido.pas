@@ -33,6 +33,7 @@ type
     procedure FormCreate(Sender: TObject);
     procedure edtValorUnitarioExit(Sender: TObject);
     procedure edtValorUnitarioKeyPress(Sender: TObject; var Key: Char);
+    procedure FormShow(Sender: TObject);
   private
     FEditando: Boolean;
     FLinha: Integer;
@@ -211,6 +212,11 @@ begin
   FEditando := false;
 end;
 
+procedure TfrmIncluirItemPedido.FormShow(Sender: TObject);
+begin
+  edtCodProduto.Enabled := not FEditando;
+end;
+
 procedure TfrmIncluirItemPedido.LimpaTela;
 begin
   edtCodProduto.Clear;
@@ -222,6 +228,7 @@ begin
   edtCodProduto.SetFocus;
 
   FEditando := False;
+  edtCodProduto.Enabled := not FEditando;
 end;
 
 end.

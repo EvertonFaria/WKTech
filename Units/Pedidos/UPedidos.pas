@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls, System.Generics.Collections,
-  Vcl.Grids, System.ImageList, Vcl.ImgList, Vcl.VirtualImageList, EItemPedido;
+  Vcl.Grids, System.ImageList, Vcl.ImgList, Vcl.VirtualImageList, EItemPedido, System.UITypes;
 
 type
   TfrmPedidoVenda = class(TForm)
@@ -73,6 +73,7 @@ type
 
 const
   DATA_VAZIA = '  /  /    ';
+  MSG_CONDIRMAR_EXCLUSAO = 'Deseja realmente remover o registro?';
 
   cCLIENTE = 0;
   cPRODUTO = 1;
@@ -156,25 +157,27 @@ var
   FPedido: TPedido;
   Messages: TList<string>;
 begin
-  FPedido := TPedido.Create(frmMenu.fdcMySQLConnection);
-  FPedido.NumeroPedido.Valor := StrToInt(edtPedido.Text);
-
-  try
-    Messages := TList<string>.Create;
+  if MessageDlg(MSG_CONDIRMAR_EXCLUSAO, mtConfirmation, [mbYes, mbNo], 0) = mrYes then begin
+    FPedido := TPedido.Create(frmMenu.fdcMySQLConnection);
+    FPedido.NumeroPedido.Valor := StrToInt(edtPedido.Text);
 
     try
-      FPedido.LoadPedido();
-      Messages.AddRange(FPedido.ExcluirPedido());
-      LimparTela(True);
-    except
-      on E: Exception do
-        Messages.Add(MSG_DB_ERROR);
-    end;
-  finally
-    FPedido.Free;
-  end;
+      Messages := TList<string>.Create;
 
-  TCustomMessageDialog.ShowDialog(Messages);
+      try
+        FPedido.LoadPedido();
+        Messages.AddRange(FPedido.ExcluirPedido());
+        LimparTela(True);
+      except
+        on E: Exception do
+          Messages.Add(MSG_DB_ERROR);
+      end;
+    finally
+      FPedido.Free;
+    end;
+
+    TCustomMessageDialog.ShowDialog(Messages);
+  end;
 end;
 
 procedure TfrmPedidoVenda.btnGravarAlterarClick(Sender: TObject);
@@ -238,7 +241,8 @@ end;
 
 procedure TfrmPedidoVenda.btnRemoverItemClick(Sender: TObject);
 begin
-  ExcluirRegistro(stgItensPedido.Row);
+  if MessageDlg(MSG_CONDIRMAR_EXCLUSAO, mtConfirmation, [mbYes, mbNo], 0) = mrYes then
+    ExcluirRegistro(stgItensPedido.Row);
 end;
 
 procedure TfrmPedidoVenda.dtpEmissaoChange(Sender: TObject);
