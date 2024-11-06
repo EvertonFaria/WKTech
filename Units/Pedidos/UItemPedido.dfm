@@ -14,9 +14,10 @@ object frmIncluirItemPedido: TfrmIncluirItemPedido
   OldCreateOrder = False
   Position = poOwnerFormCenter
   OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
-  object Panel1: TPanel
+  object pnlBotoes: TPanel
     Left = 0
     Top = 133
     Width = 645
@@ -24,10 +25,7 @@ object frmIncluirItemPedido: TfrmIncluirItemPedido
     Align = alBottom
     Color = clMaroon
     ParentBackground = False
-    TabOrder = 0
-    ExplicitLeft = 248
-    ExplicitTop = 152
-    ExplicitWidth = 185
+    TabOrder = 1
     DesignSize = (
       645
       41)
@@ -41,7 +39,7 @@ object frmIncluirItemPedido: TfrmIncluirItemPedido
       ImageIndex = 0
       Images = dtmImagensEIcones.vilIcones
       TabOrder = 0
-      ExplicitLeft = 472
+      OnClick = btnInserirClick
     end
     object btnCancelar: TButton
       Left = 562
@@ -54,17 +52,15 @@ object frmIncluirItemPedido: TfrmIncluirItemPedido
       Images = dtmImagensEIcones.vilIcones
       TabOrder = 1
       OnClick = btnCancelarClick
-      ExplicitLeft = 552
     end
   end
-  object Panel2: TPanel
+  object pnlCampos: TPanel
     Left = 0
     Top = 0
     Width = 645
     Height = 133
     Align = alClient
-    TabOrder = 1
-    ExplicitTop = 3
+    TabOrder = 0
     object lblProduto: TLabel
       Left = 16
       Top = 16
@@ -110,7 +106,7 @@ object frmIncluirItemPedido: TfrmIncluirItemPedido
       CharCase = ecUpperCase
       Enabled = False
       ReadOnly = True
-      TabOrder = 1
+      TabOrder = 2
     end
     object edtQuantidade: TEdit
       Left = 16
@@ -118,25 +114,27 @@ object frmIncluirItemPedido: TfrmIncluirItemPedido
       Width = 121
       Height = 21
       NumbersOnly = True
-      TabOrder = 2
+      TabOrder = 3
+      OnExit = edtQuantidadeExit
     end
     object edtValorUnitario: TEdit
       Left = 143
       Top = 80
       Width = 121
-      Height = 20
-      Enabled = False
-      ReadOnly = True
-      TabOrder = 3
+      Height = 21
+      TabOrder = 4
+      OnExit = edtValorUnitarioExit
+      OnKeyPress = edtValorUnitarioKeyPress
     end
     object edtValorTotal: TEdit
       Left = 270
       Top = 80
       Width = 121
-      Height = 20
+      Height = 21
       Enabled = False
       ReadOnly = True
-      TabOrder = 4
+      TabOrder = 5
+      OnChange = edtValorTotalChange
     end
     object btnBuscaProduto: TButton
       Left = 140
@@ -145,7 +143,7 @@ object frmIncluirItemPedido: TfrmIncluirItemPedido
       Height = 25
       ImageIndex = 4
       Images = dtmImagensEIcones.vilIcones
-      TabOrder = 5
+      TabOrder = 1
       OnClick = btnBuscaProdutoClick
     end
   end

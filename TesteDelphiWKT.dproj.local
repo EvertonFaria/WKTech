@@ -29,7 +29,10 @@
     <Transaction>2024/11/04 20:28:56.701,=E:\projetos\WK Technology\Unit1.pas</Transaction>
     <Transaction>2024/11/04 20:29:55.994,E:\projetos\WK Technology\Entidades\ETipos.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
     <Transaction>2024/11/05 03:08:00.187,=E:\projetos\WK Technology\Unit1.pas</Transaction>
-    <Transaction>2024/11/05 03:08:35.700,E:\projetos\WK Technology\Units\Pedidos\UItemPedido.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
     <Transaction>2024/11/05 03:08:35.700,E:\projetos\WK Technology\Units\Pedidos\UItemPedido.dfm=E:\projetos\WK Technology\Unit1.dfm</Transaction>
+    <Transaction>2024/11/05 03:08:35.700,E:\projetos\WK Technology\Units\Pedidos\UItemPedido.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/05 19:14:10.817,=E:\projetos\WK Technology\Unit1.pas</Transaction>
+    <Transaction>2024/11/05 19:14:53.344,E:\projetos\WK Technology\Units\Outros\CustomMessageDialogBox.dfm=E:\projetos\WK Technology\Unit1.dfm</Transaction>
+    <Transaction>2024/11/05 19:14:53.344,E:\projetos\WK Technology\Units\Outros\CustomMessageDialogBox.pas=E:\projetos\WK Technology\Unit1.pas</Transaction>
   </Transactions>
 </BorlandProject>

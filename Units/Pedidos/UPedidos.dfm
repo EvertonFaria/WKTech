@@ -26,10 +26,6 @@ object frmPedidoVenda: TfrmPedidoVenda
     Height = 548
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = 280
-    ExplicitTop = 280
-    ExplicitWidth = 185
-    ExplicitHeight = 41
     object gbxBuscaPedido: TGroupBox
       Left = 1
       Top = 1
@@ -37,7 +33,6 @@ object frmPedidoVenda: TfrmPedidoVenda
       Height = 56
       Align = alTop
       TabOrder = 0
-      ExplicitTop = -5
       object lblPedido: TLabel
         Left = 8
         Top = 8
@@ -140,7 +135,7 @@ object frmPedidoVenda: TfrmPedidoVenda
         BorderStyle = bsNone
         Enabled = False
         ReadOnly = True
-        TabOrder = 1
+        TabOrder = 2
       end
       object edtCidadeCliente: TEdit
         Left = 652
@@ -150,7 +145,7 @@ object frmPedidoVenda: TfrmPedidoVenda
         BorderStyle = bsNone
         Enabled = False
         ReadOnly = True
-        TabOrder = 2
+        TabOrder = 3
       end
       object edtUFCliente: TEdit
         Left = 936
@@ -160,7 +155,7 @@ object frmPedidoVenda: TfrmPedidoVenda
         BorderStyle = bsNone
         Enabled = False
         ReadOnly = True
-        TabOrder = 3
+        TabOrder = 4
       end
       object btnBuscaCliente: TButton
         Left = 132
@@ -173,7 +168,7 @@ object frmPedidoVenda: TfrmPedidoVenda
         Images = dtmImagensEIcones.vilIcones
         ParentShowHint = False
         ShowHint = True
-        TabOrder = 4
+        TabOrder = 1
         OnClick = btnBuscaClienteClick
       end
     end
@@ -186,8 +181,6 @@ object frmPedidoVenda: TfrmPedidoVenda
       Caption = 'Itens do pedido'
       Enabled = False
       TabOrder = 2
-      ExplicitTop = 256
-      ExplicitHeight = 291
       object pnlIncluirAlterarRemoverItens: TPanel
         Left = 2
         Top = 15
@@ -227,6 +220,7 @@ object frmPedidoVenda: TfrmPedidoVenda
           ParentShowHint = False
           ShowHint = True
           TabOrder = 1
+          OnClick = stgItensPedidoDblClick
         end
         object btnRemoverItem: TButton
           Left = 888
@@ -241,6 +235,7 @@ object frmPedidoVenda: TfrmPedidoVenda
           ParentShowHint = False
           ShowHint = True
           TabOrder = 2
+          OnClick = btnRemoverItemClick
         end
       end
       object stgItensPedido: TStringGrid
@@ -251,11 +246,10 @@ object frmPedidoVenda: TfrmPedidoVenda
         Align = alClient
         FixedCols = 0
         RowCount = 2
+        Options = [goFixedHorzLine, goHorzLine, goRangeSelect, goEditing, goRowSelect]
         TabOrder = 1
-        ExplicitLeft = 256
-        ExplicitTop = 168
-        ExplicitWidth = 320
-        ExplicitHeight = 120
+        OnDblClick = stgItensPedidoDblClick
+        OnKeyDown = stgItensPedidoKeyDown
         ColWidths = (
           130
           437
@@ -272,12 +266,16 @@ object frmPedidoVenda: TfrmPedidoVenda
       Align = alBottom
       Enabled = False
       TabOrder = 3
-      ExplicitLeft = 376
-      ExplicitTop = 496
-      ExplicitWidth = 185
       DesignSize = (
         994
         41)
+      object lblTotalPedido: TLabel
+        Left = 8
+        Top = 11
+        Width = 78
+        Height = 13
+        Caption = 'Total do pedido:'
+      end
       object btnGravarAlterar: TButton
         Left = 740
         Top = 6
@@ -288,6 +286,7 @@ object frmPedidoVenda: TfrmPedidoVenda
         ImageIndex = 8
         Images = dtmImagensEIcones.vilIcones
         TabOrder = 0
+        OnClick = btnGravarAlterarClick
       end
       object btnExcluir: TButton
         Left = 902
@@ -298,7 +297,8 @@ object frmPedidoVenda: TfrmPedidoVenda
         Caption = '&Excluir'
         ImageIndex = 9
         Images = dtmImagensEIcones.vilIcones
-        TabOrder = 1
+        TabOrder = 2
+        OnClick = btnExcluirClick
       end
       object btnCancelar: TButton
         Left = 821
@@ -309,7 +309,17 @@ object frmPedidoVenda: TfrmPedidoVenda
         Caption = '&Cancelar'
         ImageIndex = 7
         Images = dtmImagensEIcones.vilIcones
-        TabOrder = 2
+        TabOrder = 1
+        OnClick = btnCancelarClick
+      end
+      object edtTotalPedido: TEdit
+        Left = 94
+        Top = 8
+        Width = 121
+        Height = 21
+        Enabled = False
+        ReadOnly = True
+        TabOrder = 3
       end
     end
   end

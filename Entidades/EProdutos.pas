@@ -51,6 +51,7 @@ type
     function InserirProduto: TList<string>;
     function AlterarProduto: TList<string>;
     function ExcluirProduto: TList<string>;
+    procedure LoadProduto();
     function BuscarProduto(const pValue: string; pCampoBusca: Integer): TObjectList<TProduto>;
   end;
 
@@ -147,6 +148,54 @@ begin
   end;
 
   Result := Messages;
+end;
+
+procedure TProduto.LoadProduto;
+var
+  qConsulta: TFDQuery;
+begin
+  qConsulta := TFDQuery.Create(nil);
+
+  try
+    qConsulta.Connection := FConnection;
+    qConsulta.SQL.Add(
+      'SELECT PRO_CDPRODUTO,  ' + #10 + #13 +
+      '       PRO_NMPRODUTO,  ' + #10 + #13 +
+      '       PRO_VLUNITARIO, ' + #10 + #13 +
+      '       PRO_DTCADASTRO, ' + #10 + #13 +
+      '       PRO_USCADASTRO, ' + #10 + #13 +
+      '       PRO_DTALTERACAO,' + #10 + #13 +
+      '       PRO_USALTERACAO ' + #10 + #13 +
+      '  FROM PRODUTO_PRO     ' + #10 + #13 +
+      ' WHERE 1 = 1           ' + #10 + #13
+    );
+
+
+    if FCDProduto.Valor > 0 then begin
+      qConsulta.SQL.Add('AND PRO_CDPRODUTO = :CDProduto');
+      qConsulta.ParamByName('CDProduto').AsInteger := FCDProduto.Valor;
+    end
+    else if string.IsNullOrEmpty(FNMProduto.Valor) then begin
+      qConsulta.SQL.Add('AND PRO_NMPRODUTO LIKE :NMProduto');
+      qConsulta.ParamByName('NMProduto').AsString := '%' + FNMProduto.Valor + '%';
+    end;
+
+    qConsulta.Open;
+
+    while not qConsulta.EoF do begin
+      FCDProduto.Valor    := qConsulta.FieldByName('PRO_CDPRODUTO').AsInteger;
+      FNMProduto.Valor    := qConsulta.FieldByName('PRO_NMPRODUTO').AsString;
+      FVLUnitario.Valor   := qConsulta.FieldByName('PRO_VLUNITARIO').AsCurrency;
+      FDTCadastro.Valor   := qConsulta.FieldByName('PRO_DTCADASTRO').AsDateTime;
+      FUSCadastro.Valor   := qConsulta.FieldByName('PRO_USCADASTRO').AsString;
+      FDTAlteracao.Valor  := qConsulta.FieldByName('PRO_DTALTERACAO').AsDateTime;
+      FUSAlteracao.Valor  := qConsulta.FieldByName('PRO_USALTERACAO').AsString;
+
+      Break;
+    end;
+  finally
+    qConsulta.Free;
+  end;
 end;
 
 function TProduto.AlterarProduto: TList<string>;

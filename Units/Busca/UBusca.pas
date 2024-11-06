@@ -74,6 +74,7 @@ begin
   FComboBox.Left := 10;
   FComboBox.Top := 10;
   FComboBox.Width := 150;
+  FComboBox.TabOrder := 0;
 
   // Configuração do Edit para busca
   FEdit := TEdit.Create(Self);
@@ -81,6 +82,7 @@ begin
   FEdit.Left := FComboBox.Left + FComboBox.Width + 10;
   FEdit.Top := 10;
   FEdit.Width := 200;
+  FEdit.TabOrder := 1;
 
   // Configuração do botão de buscar
   FButtonBuscar := TButton.Create(Self);
@@ -89,6 +91,7 @@ begin
   FButtonBuscar.Top := 10;
   FButtonBuscar.Caption := 'Buscar';
   FButtonBuscar.OnClick := OnBuscarClick;
+  FButtonBuscar.TabOrder := 2;
 
   // Configuração do DBGrid
   FGrid := TDBGrid.Create(Self);
@@ -98,6 +101,7 @@ begin
   FGrid.Width := 480;
   FGrid.Height := 200;
   FGrid.DataSource := FDataSource;
+  FGrid.TabOrder := 3;
 
   // Botão OK
   FButtonOK := TButton.Create(Self);
@@ -106,6 +110,7 @@ begin
   FButtonOK.Top := FGrid.Top + FGrid.Height + 10;
   FButtonOK.Caption := 'OK';
   FButtonOK.OnClick := OnOKClick;
+  FButtonOK.TabOrder := 4;
 
   // Botão Cancelar
   FButtonCancel := TButton.Create(Self);
@@ -114,6 +119,7 @@ begin
   FButtonCancel.Top := FGrid.Top + FGrid.Height + 10;
   FButtonCancel.Caption := 'Cancelar';
   FButtonCancel.OnClick := OnCancelClick;
+  FButtonCancel.TabOrder := 5;
 
   Self.ClientHeight := FButtonCancel.Top + FButtonCancel.Height + 10;
   Self.ClientWidth := FGrid.Width + 20;
@@ -140,23 +146,19 @@ end;
 
 constructor TfrmBuscar.CreatePed(AOwner: TComponent; AConnection: TFDConnection; APedido: TPedido);
 begin
-{
   Create(AOwner, AConnection);
 
   FCampos := TList<TStringEX>.Create;
 
-  FCampos.Add(TStringEx.CriarComValor(APedido.Codigo.Descricao, ACliente.Codigo.Campo, string.Empty));
-  FCampos.Add(TStringEx.CriarComValor(ACliente.Nome.Descricao, ACliente.Nome.Campo, string.Empty));
-  FCampos.Add(TStringEx.CriarComValor(ACliente.Cidade.Descricao, ACliente.Cidade.Campo, string.Empty));
-  FCampos.Add(TStringEx.CriarComValor(ACliente.UF.Descricao, ACliente.UF.Campo, string.Empty));
+  FCampos.Add(TStringEx.CriarComValor(APedido.NumeroPedido.Descricao, APedido.NumeroPedido.Campo, string.Empty));
+  FCampos.Add(TStringEx.CriarComValor(APedido.CDCliente.Descricao, APedido.CDCliente.Campo, string.Empty));
+  FCampos.Add(TStringEx.CriarComValor(APedido.DataEmissao.Descricao, APedido.DataEmissao.Campo, string.Empty));
 
-  FComboBox.Items.Add(ACliente.Codigo.Descricao);
-  FComboBox.Items.Add(ACliente.Nome.Descricao);
-  FComboBox.Items.Add(ACliente.Cidade.Descricao);
-  FComboBox.Items.Add(ACliente.UF.Descricao);
+  FComboBox.Items.Add(APedido.NumeroPedido.Descricao);
+  FComboBox.Items.Add(APedido.CDCliente.Descricao);
+  FComboBox.Items.Add(APedido.DataEmissao.Descricao);
 
   FComboBox.ItemIndex := 0;
-}
 end;
 
 constructor TfrmBuscar.CreatePro(AOwner: TComponent; AConnection: TFDConnection; AProduto: TProduto);
@@ -210,6 +212,8 @@ begin
       Self.Caption := BUSCAR_PEDIDO;
     end;
   end;
+
+  FEdit.SetFocus;
 end;
 
 function TfrmBuscar.GetTipoBusca;

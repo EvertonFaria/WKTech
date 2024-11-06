@@ -11,7 +11,8 @@ uses
   EProdutos in 'Entidades\EProdutos.pas',
   EItemPedido in 'Entidades\EItemPedido.pas',
   ETipos in 'Entidades\ETipos.pas',
-  UItemPedido in 'Units\Pedidos\UItemPedido.pas' {frmIncluirItemPedido};
+  UItemPedido in 'Units\Pedidos\UItemPedido.pas' {frmIncluirItemPedido},
+  CustomMessageDialogBox in 'Units\Outros\CustomMessageDialogBox.pas' {CustomMessageDialog};
 
 {$R *.res}
 

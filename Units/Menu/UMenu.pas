@@ -33,6 +33,7 @@ type
     procedure mniPedidosClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure fdcMySQLConnectionAfterConnect(Sender: TObject);
+    procedure ConfigureBrazilRegion();
   end;
 
   TFuncoesGerais = class
@@ -104,6 +105,27 @@ begin
       ShowMessage(ERRO_CONECTARDB + e.Message);
     end;
   end;
+end;
+
+procedure TfrmMenu.ConfigureBrazilRegion;
+var
+  FormatBr: TFormatSettings;
+begin
+  FormatBr                     := TFormatSettings.Create;
+  FormatBr.DecimalSeparator    := ',';
+  FormatBr.ThousandSeparator   := '.';
+  FormatBr.CurrencyDecimals    := 2;
+  FormatBr.DateSeparator       := '/';
+  FormatBr.ShortDateFormat     := 'dd/mm/yyyy';
+  FormatBr.LongDateFormat      := 'dd/mm/yyyy';
+  FormatBr.TimeSeparator       := ':';
+  FormatBr.TimeAMString        := 'AM';
+  FormatBr.TimePMString        := 'PM';
+  FormatBr.ShortTimeFormat     := 'hh:nn';
+  FormatBr.LongTimeFormat      := 'hh:nn:ss';
+  FormatBr.CurrencyString      := 'R$';
+
+  System.SysUtils.FormatSettings := FormatBr;
 end;
 
 procedure TfrmMenu.mniPedidosClick(Sender: TObject);
