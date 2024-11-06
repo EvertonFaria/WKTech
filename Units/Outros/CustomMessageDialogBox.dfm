@@ -27,9 +27,9 @@ object CustomMessageDialog: TCustomMessageDialog
     FixedCols = 0
     RowCount = 2
     FixedRows = 0
+    Options = [goFixedVertLine, goFixedHorzLine, goHorzLine, goEditing, goRowSelect]
     TabOrder = 0
     OnSelectCell = StringGridSelectCell
-    ExplicitWidth = 524
   end
   object pnlBotao: TPanel
     Left = 0
@@ -38,9 +38,6 @@ object CustomMessageDialog: TCustomMessageDialog
     Height = 41
     Align = alBottom
     TabOrder = 1
-    ExplicitLeft = 136
-    ExplicitTop = 264
-    ExplicitWidth = 185
     object imgDialog: TImage
       Left = 496
       Top = 2
@@ -333,9 +330,5 @@ object CustomMessageDialog: TCustomMessageDialog
     Font.Style = []
     ParentFont = False
     TabOrder = 2
-    ExplicitLeft = 112
-    ExplicitTop = 200
-    ExplicitWidth = 185
-    ExplicitHeight = 41
   end
 end

@@ -225,10 +225,11 @@ begin
   edtValorUnitario.Clear;
   edtValorTotal.Clear;
 
-  edtCodProduto.SetFocus;
-
   FEditando := False;
   edtCodProduto.Enabled := not FEditando;
+
+  if not FEditando then
+    edtCodProduto.SetFocus;
 end;
 
 end.

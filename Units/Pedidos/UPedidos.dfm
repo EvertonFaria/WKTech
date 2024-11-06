@@ -1,4 +1,4 @@
-object frmPedidoVenda: TfrmPedidoVenda
+﻿object frmPedidoVenda: TfrmPedidoVenda
   Left = 0
   Top = 0
   Caption = 'Pedido de venda'
@@ -46,6 +46,15 @@ object frmPedidoVenda: TfrmPedidoVenda
         Width = 79
         Height = 13
         Caption = 'Data de emiss'#227'o'
+      end
+      object lblOrientação: TLabel
+        Left = 171
+        Top = 27
+        Width = 541
+        Height = 13
+        Caption = 
+          'Pressione "Enter" para iniciar um novo pedido. Para alterar um p' +
+          'edido, digite o  c'#243'digo ou fa'#231'a a busca no bot'#227'o!'
       end
       object edtPedido: TEdit
         Left = 8

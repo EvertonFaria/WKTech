@@ -37,6 +37,7 @@ type
     btnCancelar: TButton;
     edtTotalPedido: TEdit;
     lblTotalPedido: TLabel;
+    lblOrientação: TLabel;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FormCreate(Sender: TObject);
     procedure dtpEmissaoChange(Sender: TObject);
